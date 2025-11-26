@@ -5,63 +5,23 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF59D"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/main_FAB_start"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="50dp"
-            android:layout_alignParentLeft="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:textColor="@color/black"
-            app:icon="@drawable/left_arrow"
-
-            />
-        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-            android:id="@+id/main_FAB_start"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="50dp"
-            android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:textColor="@color/black"
-            app:icon="@drawable/right_arrow"
-            />
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/main_FAB_start"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_margin="50dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:textColor="@color/black"
-        app:icon="@drawable/right_arrow" />
-
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/main_FAB_start"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:textColor="@color/black"
-        app:icon="@drawable/left_arrow" />
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/main_BG_pic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFF59D" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginRight="20dp"
+        android:layout_alignParentRight="true"
         android:layout_marginLeft="@dimen/default_margin"
-        android:layout_marginTop= "@dimen/default_margin">
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginRight="10dp">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_heart0"
@@ -83,5 +43,76 @@
             app:srcCompat="@drawable/heart" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="@dimen/main_BTN_margin"
+        android:layout_above="@id/main_FAB_left"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_spaceship0"
+            android:visibility="invisible"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/spaceship_foreground" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_spaceship1"
+            android:visibility="visible"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/spaceship_foreground" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_spaceship2"
+            android:visibility="invisible"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/spaceship_foreground" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_spaceship3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            app:srcCompat="@drawable/spaceship_foreground" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/main_spaceship4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            app:srcCompat="@drawable/spaceship_foreground" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/main_FAB_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/main_BTN_margin"
+        android:layout_marginBottom="@dimen/main_BTN_margin"
+        android:clickable="true"
+        android:textColor="@color/black"
+        app:icon="@drawable/right_arrow" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/main_FAB_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/main_BTN_margin"
+        android:layout_marginBottom="@dimen/main_BTN_margin"
+        android:clickable="true"
+        android:textColor="@color/black"
+        app:icon="@drawable/left_arrow" />
+
 
 </RelativeLayout>
