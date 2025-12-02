@@ -12,7 +12,7 @@
         android:id="@+id/main_BG_pic"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFF59D" />
+        android:background="#000000" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/main_hearts_box"
@@ -58,48 +58,48 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_asteroid0_0"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:src="@drawable/asteroid"
-                android:id="@id/main_asteroid_0_0"
                 android:visibility="invisible"/>
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_asteroid0_1"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_gravity="top"
                 android:layout_weight="1"
                 android:src="@drawable/asteroid"
-                android:id="@id/main_asteroid_0_1"
                 android:visibility="invisible"/>
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_asteroid0_2"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_gravity="top"
                 android:layout_weight="1"
                 android:src="@drawable/asteroid"
-                android:id="@id/main_asteroid_0_2"
                 android:visibility="invisible"/>
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_asteroid0_3"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_gravity="top"
                 android:layout_weight="1"
                 android:src="@drawable/asteroid"
-                android:id="@id/main_asteroid_0_3"
                 android:visibility="invisible"/>
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_asteroid0_4"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_gravity="top"
                 android:layout_weight="1"
                 android:src="@drawable/asteroid"
-                android:id="@id/main_asteroid_0_4"
                 android:visibility="invisible"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -110,48 +110,48 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_asteroid1_0"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:src="@drawable/asteroid"
-                android:id="@id/main_asteroid_1_0"
                 android:visibility="invisible"/>
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_asteroid1_1"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_gravity="top"
                 android:layout_weight="1"
                 android:src="@drawable/asteroid"
-                android:id="@id/main_asteroid_1_1"
                 android:visibility="invisible"/>
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_asteroid1_2"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_gravity="top"
                 android:layout_weight="1"
                 android:src="@drawable/asteroid"
-                android:id="@id/main_asteroid_1_2"
                 android:visibility="invisible"/>
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_asteroid1_3"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_gravity="top"
                 android:layout_weight="1"
                 android:src="@drawable/asteroid"
-                android:id="@id/main_asteroid_1_3"
                 android:visibility="invisible"/>
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_asteroid1_4"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_gravity="top"
                 android:layout_weight="1"
                 android:src="@drawable/asteroid"
-                android:id="@id/main_asteroid_1_4"
                 android:visibility="invisible"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -162,48 +162,49 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_asteroid2_0"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
                 android:src="@drawable/asteroid"
-                android:id="@id/main_asteroid_2_0"
                 android:visibility="invisible"/>
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_asteroid2_1"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_gravity="top"
                 android:layout_weight="1"
                 android:src="@drawable/asteroid"
-                android:id="@id/main_asteroid_2_1"
                 android:visibility="invisible"/>
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_asteroid2_2"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_gravity="top"
                 android:layout_weight="1"
                 android:src="@drawable/asteroid"
-                android:id="@id/main_asteroid_2_2"
                 android:visibility="invisible"/>
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_asteroid2_3"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_gravity="top"
                 android:layout_weight="1"
                 android:src="@drawable/asteroid"
-                android:id="@id/main_asteroid_2_3"
                 android:visibility="invisible"/>
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/main_asteroid2_4"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_gravity="top"
                 android:layout_weight="1"
                 android:src="@drawable/asteroid"
-                android:id="@id/main_asteroid_2_4"
+
                 android:visibility="invisible"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
 
