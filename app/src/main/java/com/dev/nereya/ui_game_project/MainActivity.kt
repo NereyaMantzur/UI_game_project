@@ -15,6 +15,7 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
 import com.dev.nereya.ui_game_project.model.GameManager
 import com.dev.nereya.ui_game_project.utils.AsteroidState
 import com.dev.nereya.ui_game_project.utils.SignalManager
+import com.google.android.material.textview.MaterialTextView
 import kotlin.jvm.java
 
 
@@ -25,6 +26,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var main_FAB_right: ExtendedFloatingActionButton
     private lateinit var main_spaceships: Array<AppCompatImageView>
     private lateinit var main_asteroids: Array<AppCompatImageView>
+
+    private lateinit var main_score : MaterialTextView
     private val handler: Handler = Handler(Looper.getMainLooper())
     val asteroids: Array<AsteroidState> = arrayOf(
         AsteroidState(0, (-3..-1).random()),
@@ -33,6 +36,8 @@ class MainActivity : AppCompatActivity() {
 
     val runnable: Runnable = object : Runnable {
         override fun run() {
+            gameManager.score += 10
+            updateScoreUI()
             moveAsteroids(asteroids)
             val hit1 = gameManager.checkCollision(asteroids[0], gameManager.currentShipIndex)
             val hit2 = gameManager.checkCollision(asteroids[1], gameManager.currentShipIndex)
@@ -73,7 +78,9 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
     }
+
     var gameManager: GameManager = GameManager()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -94,6 +101,7 @@ class MainActivity : AppCompatActivity() {
         main_BG_pic = findViewById(R.id.main_BG_pic)
         main_FAB_left = findViewById(R.id.main_FAB_left)
         main_FAB_right = findViewById(R.id.main_FAB_right)
+        main_score = findViewById(R.id.main_score)
         main_hearts = arrayOf(
             findViewById(R.id.main_IMG_heart0),
             findViewById(R.id.main_IMG_heart1),
@@ -138,6 +146,7 @@ class MainActivity : AppCompatActivity() {
             gameManager.buttonClicked = false
             refreshUI()
         }
+        main_score.text = gameManager.score.toString()
         refreshUI()
     }
 
@@ -168,6 +177,10 @@ class MainActivity : AppCompatActivity() {
                 main_hearts[i].visibility = View.INVISIBLE
             }
         }
+    }
+
+    private fun updateScoreUI() {
+        main_score.text = gameManager.score.toString()
     }
 
     fun changeActivity() {

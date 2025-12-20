@@ -5,4 +5,5 @@
     <dimen name="main_BTN_margin">50dp</dimen>
     <dimen name="default_padding">8dp</dimen>
     <dimen name="highScore_margin">2dp</dimen>
+    <dimen name="main_score_size">30sp</dimen>
 </resources>

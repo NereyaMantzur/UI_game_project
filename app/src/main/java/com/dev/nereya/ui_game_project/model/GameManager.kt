@@ -6,6 +6,7 @@ class GameManager() {
 
     var isGameEnded: Boolean = false
     var buttonClicked: Boolean = true
+    var score: Int = 0
     var currentShipIndex: Int = 0
     var hits: Int = 0
     var hearts = 3
