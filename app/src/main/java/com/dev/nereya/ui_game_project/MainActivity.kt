@@ -14,6 +14,7 @@ import com.dev.nereya.ui_game_project.utils.Constants
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
 import com.dev.nereya.ui_game_project.model.GameManager
 import com.dev.nereya.ui_game_project.utils.AsteroidState
+import com.dev.nereya.ui_game_project.utils.ImageLoader
 import com.dev.nereya.ui_game_project.utils.SignalManager
 import com.google.android.material.textview.MaterialTextView
 import kotlin.jvm.java
@@ -132,11 +133,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun initViews() {
-        Glide.with(this)
-            .load("https://cdn.pixabay.com/animation/2023/07/13/14/22/14-22-36-485_512.gif")
-            .centerCrop()
-            .placeholder(findViewById<AppCompatImageView>(R.id.main_BG_pic).drawable)
-            .into(main_BG_pic)
+        ImageLoader.getInstance().loadImage(
+            "https://cdn.pixabay.com/animation/2023/07/13/14/22/14-22-36-485_512.gif",
+            main_BG_pic
+        )
 
         main_FAB_right.setOnClickListener {
             gameManager.buttonClicked = true
@@ -185,6 +185,7 @@ class MainActivity : AppCompatActivity() {
 
     fun changeActivity() {
         val intent = android.content.Intent(this, ScoreActivity::class.java)
+        intent.putExtra("SCORE",main_score.text)
         startActivity(intent)
         finish()
     }
