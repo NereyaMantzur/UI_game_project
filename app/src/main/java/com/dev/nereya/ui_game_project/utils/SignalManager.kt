@@ -45,7 +45,7 @@ class SignalManager private constructor(context: Context) {
                 }
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 val hitPattern = longArrayOf(
-                    1,400,100,100
+                    1,200,50,50
                 )
                 val waveFormVibrationEffect = VibrationEffect.createWaveform(hitPattern,1)
                 vibrator.vibrate(VibrationEffect.createWaveform(hitPattern,-1))

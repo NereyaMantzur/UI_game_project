@@ -1,15 +1,13 @@
 package com.dev.nereya.ui_game_project.utils
 
-data class AsteroidState(var rowStart: Int, var colIndex: Int) {
-    val currentPosition: Int
-        get() = rowStart + colIndex
+data class AsteroidState(var colIndex: Int, var rowIndex: Int) {
 
     fun moveForward() {
-        colIndex++
+        rowIndex++
 
-        if (colIndex > 4) {
-            colIndex = -1
-            rowStart = (0..2).random() * 5
+        if (rowIndex > 4) {
+            colIndex = (0..4).random()
+            rowIndex = (-4..-1).random()
         }
     }
 }

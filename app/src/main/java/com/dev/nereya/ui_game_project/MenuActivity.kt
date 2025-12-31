@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.dev.nereya.ui_game_project.utils.ImageLoader
 import com.google.android.material.button.MaterialButton
 
 class MenuActivity : AppCompatActivity() {
@@ -41,9 +40,6 @@ class MenuActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
-        ImageLoader.getInstance().loadImage(
-            R.drawable.menu_background,
-         menu_container)
         menu_BTN_slow.setOnClickListener { changeActivity(MainActivity::class.java, "slow") }
         menu_BTN_fast.setOnClickListener { changeActivity(MainActivity::class.java, "fast") }
         menu_BTN_sensor.setOnClickListener { changeActivity(MainActivity::class.java, "sensor") }

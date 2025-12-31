@@ -5,28 +5,28 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/main_BG_pic"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#000000" />
+        android:scaleType="centerCrop"
+         />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/main_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        tools:text="000"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:layout_above="@id/main_asteroids_box"
-        android:textSize="@dimen/main_score_size"
-        android:layout_marginTop="@dimen/default_margin"
-        android:layout_marginStart="10dp"
-        tools:ignore="RelativeOverlap" />
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="000"
+        android:textColor="@android:color/white"
+        android:textSize="32sp"
+        android:textStyle="bold" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/main_hearts_box"
@@ -34,243 +34,180 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="@dimen/default_margin"
-        android:layout_marginTop="@dimen/default_margin"
-        android:layout_marginEnd="10dp">
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_heart0"
-            android:layout_width="@dimen/heart_size"
-            android:layout_height="@dimen/heart_size"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             app:srcCompat="@drawable/heart" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_heart1"
-            android:layout_width="@dimen/heart_size"
-            android:layout_height="@dimen/heart_size"
-            android:layout_marginHorizontal="@dimen/default_margin"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginHorizontal="4dp"
             app:srcCompat="@drawable/heart" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/main_IMG_heart2"
-            android:layout_width="@dimen/heart_size"
-            android:layout_height="@dimen/heart_size"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             app:srcCompat="@drawable/heart" />
-
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/main_grid_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/main_asteroids_box"
         android:layout_below="@id/main_hearts_box"
-        android:layout_alignBottom="@id/main_spaceShips_box">
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_asteroid0_0"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:src="@drawable/asteroid"
-                android:visibility="invisible"/>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_asteroid0_1"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_gravity="top"
-                android:layout_weight="1"
-                android:src="@drawable/asteroid"
-                android:visibility="invisible"/>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_asteroid0_2"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_gravity="top"
-                android:layout_weight="1"
-                android:src="@drawable/asteroid"
-                android:visibility="invisible"/>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_asteroid0_3"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_gravity="top"
-                android:layout_weight="1"
-                android:src="@drawable/asteroid"
-                android:visibility="invisible"/>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_asteroid0_4"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_gravity="top"
-                android:layout_weight="1"
-                android:src="@drawable/asteroid"
-                android:visibility="invisible"/>
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_asteroid1_0"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:src="@drawable/asteroid"
-                android:visibility="invisible"/>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_asteroid1_1"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_gravity="top"
-                android:layout_weight="1"
-                android:src="@drawable/asteroid"
-                android:visibility="invisible"/>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_asteroid1_2"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_gravity="top"
-                android:layout_weight="1"
-                android:src="@drawable/asteroid"
-                android:visibility="invisible"/>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_asteroid1_3"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_gravity="top"
-                android:layout_weight="1"
-                android:src="@drawable/asteroid"
-                android:visibility="invisible"/>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_asteroid1_4"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_gravity="top"
-                android:layout_weight="1"
-                android:src="@drawable/asteroid"
-                android:visibility="invisible"/>
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_asteroid2_0"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:src="@drawable/asteroid"
-                android:visibility="invisible"/>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_asteroid2_1"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_gravity="top"
-                android:layout_weight="1"
-                android:src="@drawable/asteroid"
-                android:visibility="invisible"/>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_asteroid2_2"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_gravity="top"
-                android:layout_weight="1"
-                android:src="@drawable/asteroid"
-                android:visibility="invisible"/>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_asteroid2_3"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_gravity="top"
-                android:layout_weight="1"
-                android:src="@drawable/asteroid"
-                android:visibility="invisible"/>
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/main_asteroid2_4"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_gravity="top"
-                android:layout_weight="1"
-                android:src="@drawable/asteroid"
-
-                android:visibility="invisible"/>
-        </androidx.appcompat.widget.LinearLayoutCompat>
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/main_spaceShips_box"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
         android:layout_above="@id/main_FAB_left"
-        android:layout_marginBottom="@dimen/main_BTN_margin"
-        android:orientation="horizontal">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/main_spaceship0"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/spaceship_foreground" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/main_spaceship1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:visibility="visible"
-            app:srcCompat="@drawable/spaceship_foreground" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/main_spaceship2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/spaceship_foreground" />
+        android:layout_marginVertical="10dp"
+        android:orientation="horizontal"
+        android:weightSum="5"> <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:weightSum="5">
+        <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+            <ImageView android:id="@+id/main_asteroid0_0" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+            <ImageView android:id="@+id/main_spaceship0_0" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+        </FrameLayout>
+        <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+            <ImageView android:id="@+id/main_asteroid0_1" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+            <ImageView android:id="@+id/main_spaceship0_1" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+        </FrameLayout>
+        <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+            <ImageView android:id="@+id/main_asteroid0_2" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+            <ImageView android:id="@+id/main_spaceship0_2" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+        </FrameLayout>
+        <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+            <ImageView android:id="@+id/main_asteroid0_3" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+            <ImageView android:id="@+id/main_spaceship0_3" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+        </FrameLayout>
+        <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+            <ImageView android:id="@+id/main_asteroid0_4" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+            <ImageView android:id="@+id/main_spaceship0_4" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+        </FrameLayout>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/main_FAB_right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="@dimen/main_BTN_margin"
-        android:layout_marginBottom="@dimen/main_BTN_margin"
-        android:clickable="true"
-        android:textColor="@color/black"
-        app:icon="@drawable/right_arrow"
-        tools:ignore="RelativeOverlap" />
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="5">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <ImageView android:id="@+id/main_asteroid1_0" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+                <ImageView android:id="@+id/main_spaceship1_0" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+            </FrameLayout>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <ImageView android:id="@+id/main_asteroid1_1" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+                <ImageView android:id="@+id/main_spaceship1_1" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+            </FrameLayout>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <ImageView android:id="@+id/main_asteroid1_2" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+                <ImageView android:id="@+id/main_spaceship1_2" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+            </FrameLayout>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <ImageView android:id="@+id/main_asteroid1_3" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+                <ImageView android:id="@+id/main_spaceship1_3" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+            </FrameLayout>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <ImageView android:id="@+id/main_asteroid1_4" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+                <ImageView android:id="@+id/main_spaceship1_4" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+            </FrameLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="5">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <ImageView android:id="@+id/main_asteroid2_0" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+                <ImageView android:id="@+id/main_spaceship2_0" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+            </FrameLayout>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <ImageView android:id="@+id/main_asteroid2_1" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+                <ImageView android:id="@+id/main_spaceship2_1" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+            </FrameLayout>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <ImageView android:id="@+id/main_asteroid2_2" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+                <ImageView android:id="@+id/main_spaceship2_2" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+            </FrameLayout>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <ImageView android:id="@+id/main_asteroid2_3" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+                <ImageView android:id="@+id/main_spaceship2_3" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+            </FrameLayout>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <ImageView android:id="@+id/main_asteroid2_4" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+                <ImageView android:id="@+id/main_spaceship2_4" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="visible"/>
+            </FrameLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="5">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <ImageView android:id="@+id/main_asteroid3_0" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+                <ImageView android:id="@+id/main_spaceship3_0" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+            </FrameLayout>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <ImageView android:id="@+id/main_asteroid3_1" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+                <ImageView android:id="@+id/main_spaceship3_1" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+            </FrameLayout>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <ImageView android:id="@+id/main_asteroid3_2" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+                <ImageView android:id="@+id/main_spaceship3_2" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+            </FrameLayout>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <ImageView android:id="@+id/main_asteroid3_3" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+                <ImageView android:id="@+id/main_spaceship3_3" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+            </FrameLayout>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <ImageView android:id="@+id/main_asteroid3_4" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+                <ImageView android:id="@+id/main_spaceship3_4" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+            </FrameLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:weightSum="5">
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <ImageView android:id="@+id/main_asteroid4_0" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+                <ImageView android:id="@+id/main_spaceship4_0" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+            </FrameLayout>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <ImageView android:id="@+id/main_asteroid4_1" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+                <ImageView android:id="@+id/main_spaceship4_1" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+            </FrameLayout>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <ImageView android:id="@+id/main_asteroid4_2" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+                <ImageView android:id="@+id/main_spaceship4_2" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+            </FrameLayout>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <ImageView android:id="@+id/main_asteroid4_3" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+                <ImageView android:id="@+id/main_spaceship4_3" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+            </FrameLayout>
+            <FrameLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+                <ImageView android:id="@+id/main_asteroid4_4" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/asteroid" android:visibility="invisible"/>
+                <ImageView android:id="@+id/main_spaceship4_4" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/spaceship_foreground" android:visibility="invisible"/>
+            </FrameLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/main_FAB_left"
@@ -278,11 +215,20 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="@dimen/main_BTN_margin"
-        android:layout_marginBottom="@dimen/main_BTN_margin"
-        android:clickable="true"
-        android:textColor="@color/black"
-        app:icon="@drawable/left_arrow" />
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="24dp"
+        app:icon="@drawable/left_arrow"
+        android:text="" />
 
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/main_FAB_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        app:icon="@drawable/right_arrow"
+        android:text="" />
 
 </RelativeLayout>
