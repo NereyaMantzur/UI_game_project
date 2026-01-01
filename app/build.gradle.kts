@@ -53,6 +53,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    implementation("com.github.bumptech.glide:glide:5.0.5")
-    implementation("com.google.android.gms:play-services-maps:19.2.0")
-}
+
+    implementation(libs.gson)
+    implementation(libs.glide)
+    implementation(libs.play.services.maps)}

@@ -6,7 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.dev.nereya.ui_game_project.interfaces.Callback_HighScoreClicked
+import com.dev.nereya.ui_game_project.interfaces.CallbackHighScoreClicked
 import com.dev.nereya.ui_game_project.ui.HighScoreFragment
 import com.dev.nereya.ui_game_project.ui.MapFragment
 
@@ -18,6 +18,7 @@ class ScoreActivity : AppCompatActivity() {
     private lateinit var mapFragment: MapFragment
     private lateinit var highScoreFragment: HighScoreFragment
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -27,11 +28,12 @@ class ScoreActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
         findViews()
         initViews()
 
     }
+
+
 
     private fun findViews() {
         main_FRAME_list = findViewById(R.id.main_FRAME_list)
@@ -47,9 +49,9 @@ class ScoreActivity : AppCompatActivity() {
 
         highScoreFragment = HighScoreFragment()
         HighScoreFragment.highScoreItemClicked =
-            object : Callback_HighScoreClicked {
+            object : CallbackHighScoreClicked {
                 override fun highScoreItemClicked(lat: Double, lon: Double) {
-                    mapFragment.zoom(lat,lon)
+                    mapFragment.zoom(lat, lon)
                 }
             }
 

@@ -65,10 +65,13 @@ class MainActivity : AppCompatActivity() {
                 SignalManager.getInstance().toast("GAME OVER!")
                 changeActivity()
             } else {
-                if (gameMode == "EASY")
+                if (gameMode == Constants.GAME_MODE.SLOW)
                     handler.postDelayed(this, Constants.Timer.DELAY_SLOW)
-                else
+                else if (gameMode == Constants.GAME_MODE.FAST)
                     handler.postDelayed(this, Constants.Timer.DELAY_FAST)
+                else(
+                    handler.postDelayed(this, Constants.Timer.DELAY_SLOW)
+                )
             }
         }
     }
@@ -83,7 +86,7 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        gameMode = intent.getStringExtra("GAME_MODE") ?: "EASY"
+        gameMode = intent.getStringExtra("GAME_MODE") ?: "fast"
         findViews()
         initViews()
         handler.postDelayed(runnable, Constants.Timer.DELAY_FAST)

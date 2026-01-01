@@ -29,7 +29,6 @@
         android:layout_weight="1"
         android:background="@color/blueGrey_400"
         android:gravity="center"
-        android:text="45,45"
         android:textColor="@color/black"
         tools:text="1th place" />
 

@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.dev.nereya.ui_game_project.utils.Constants
 import com.google.android.material.button.MaterialButton
 
 class MenuActivity : AppCompatActivity() {
@@ -15,7 +16,6 @@ class MenuActivity : AppCompatActivity() {
     private lateinit var menu_BTN_sensor: MaterialButton
     private lateinit var menu_BTN_leaderboard: MaterialButton
     private lateinit var menu_container: AppCompatImageView
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -27,9 +27,12 @@ class MenuActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
         findViews()
         initViews()
     }
+
+
 
     private fun findViews() {
         menu_BTN_slow = findViewById(R.id.menu_BTN_slow)
@@ -40,9 +43,9 @@ class MenuActivity : AppCompatActivity() {
     }
 
     private fun initViews() {
-        menu_BTN_slow.setOnClickListener { changeActivity(MainActivity::class.java, "slow") }
-        menu_BTN_fast.setOnClickListener { changeActivity(MainActivity::class.java, "fast") }
-        menu_BTN_sensor.setOnClickListener { changeActivity(MainActivity::class.java, "sensor") }
+        menu_BTN_slow.setOnClickListener { changeActivity(MainActivity::class.java, Constants.GAME_MODE.SLOW) }
+        menu_BTN_fast.setOnClickListener { changeActivity(MainActivity::class.java, Constants.GAME_MODE.FAST) }
+        menu_BTN_sensor.setOnClickListener { changeActivity(MainActivity::class.java, Constants.GAME_MODE.SENSOR) }
         menu_BTN_leaderboard.setOnClickListener {
             changeActivity(
                 ScoreActivity::class.java,
