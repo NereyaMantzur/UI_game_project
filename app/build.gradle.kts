@@ -56,4 +56,5 @@ dependencies {
 
     implementation(libs.gson)
     implementation(libs.glide)
-    implementation(libs.play.services.maps)}
+    implementation(libs.play.services.maps)
+    implementation(libs.fused)}

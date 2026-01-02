@@ -17,8 +17,7 @@ import com.google.gson.Gson
 class HighScoreFragment : Fragment() {
 
     private var highScoreList: Array<MaterialTextView>? = null
-    private lateinit var regeneratedLeaderBoard: LeaderBoardList
-
+    private lateinit var LeaderBoard: LeaderBoardList
 
     companion object {
         var highScoreItemClicked: CallbackHighScoreClicked? = null
@@ -42,7 +41,7 @@ class HighScoreFragment : Fragment() {
             .getInstance()
             .getString(Constants.SPKeys.LEADERBOARD_KEY, "")
 
-        regeneratedLeaderBoard = if (leaderBoardFromSP.isEmpty()) {
+        LeaderBoard = if (leaderBoardFromSP.isEmpty()) {
             LeaderBoardList()
         } else {
             gson.fromJson(leaderBoardFromSP, LeaderBoardList::class.java) ?: LeaderBoardList()
@@ -50,7 +49,9 @@ class HighScoreFragment : Fragment() {
     }
 
     private fun initViews() {
-        val dataList = regeneratedLeaderBoard.leaderBoard
+        val dataList = LeaderBoard.leaderBoard.sortedByDescending {
+            it.playerScore
+        }
 
         for (i in 0..9) {
             if (i < dataList.size) {
@@ -61,9 +62,8 @@ class HighScoreFragment : Fragment() {
                     text = "${player.playerName}\t\t\t${player.playerScore}"
 
                     setOnClickListener {
-                        val coordinates = highScoreList?.get(i)?.text?.split(",")
-                        val lat: Double = coordinates?.getOrNull(0)?.toDoubleOrNull() ?: 0.0
-                        val lon: Double = coordinates?.getOrNull(1)?.toDoubleOrNull() ?: 0.0
+                        val lat = player.lat
+                        val lon = player.lon
 
                         highScoreItemClicked?.highScoreItemClicked(lat, lon)
                     }
@@ -88,5 +88,4 @@ class HighScoreFragment : Fragment() {
             v.findViewById(R.id.highScore_text_10)
         )
     }
-
 }

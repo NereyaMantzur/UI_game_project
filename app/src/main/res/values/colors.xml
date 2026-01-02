@@ -7,4 +7,6 @@
     <color name="blueGrey_600">#546E7A</color>
     <color name="grey_400">#BDBDBD</color>
     <color name="blueGrey_400">#78909C</color>
+    <color name="neon_blue">#00E5FF</color>
+    <color name="neon_blue_pressed">#3300E5FF</color>
 </resources>

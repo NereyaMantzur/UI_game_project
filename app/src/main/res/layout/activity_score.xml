@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/grey_600"
+            android:background="#003749"
             android:padding="@dimen/default_padding" />
 
         <FrameLayout
@@ -25,71 +25,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/blueGrey_600"
+            android:background="#003749"
             android:padding="@dimen/default_padding" />
     </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/score_CARD_enter_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="32dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="10dp"
-        app:cardBackgroundColor="@android:color/white">
-
-        <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/score_container"
-            android:gravity="center"
-            android:visibility="gone"
-            android:orientation="vertical"
-            android:padding="24dp">
-
-            <com.google.android.material.textview.MaterialTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="YOUR SCORE IS:"
-                android:textSize="22sp"
-                android:textStyle="bold"
-                android:textColor="@android:color/black"/>
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/score_LBL_score"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
-                tools:text="1200"
-                android:textSize="20sp"
-                android:textColor="@color/blueGrey_600"/>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter Name"
-                >
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/score_EDT_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:maxLines="1"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/score_BTN_save"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="SAVE"
-                android:textStyle="bold"/>
-
-        </androidx.appcompat.widget.LinearLayoutCompat>
-    </androidx.cardview.widget.CardView>
 
 </FrameLayout>

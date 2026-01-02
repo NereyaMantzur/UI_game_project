@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/highScore_margin"
         android:layout_weight="1"
-        android:background="@color/blueGrey_600"
+        android:background="@color/neon_blue"
         android:gravity="center"
         android:text="@string/leaderboard_title"
         android:textStyle="bold"
@@ -27,9 +27,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/highScore_margin"
         android:layout_weight="1"
-        android:background="@color/blueGrey_400"
+        android:background="#003749"
         android:gravity="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
+        android:textSize="@dimen/score_text_size"
         tools:text="1th place" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -38,9 +39,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/highScore_margin"
         android:layout_weight="1"
-        android:background="@color/blueGrey_400"
+        android:background="#003749"
         android:gravity="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         tools:text="2th place" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -49,9 +51,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/highScore_margin"
         android:layout_weight="1"
-        android:background="@color/blueGrey_400"
+        android:background="#003749"
         android:gravity="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         tools:text="3th place" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -60,9 +63,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/highScore_margin"
         android:layout_weight="1"
-        android:background="@color/blueGrey_400"
+        android:background="#003749"
         android:gravity="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         tools:text="4th place" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -71,9 +75,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/highScore_margin"
         android:layout_weight="1"
-        android:background="@color/blueGrey_400"
+        android:background="#003749"
         android:gravity="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         tools:text="5th place" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -82,9 +87,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/highScore_margin"
         android:layout_weight="1"
-        android:background="@color/blueGrey_400"
+        android:background="#003749"
         android:gravity="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         tools:text="6th place" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -93,9 +99,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/highScore_margin"
         android:layout_weight="1"
-        android:background="@color/blueGrey_400"
+        android:background="#003749"
         android:gravity="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         tools:text="7th place" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -104,9 +111,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/highScore_margin"
         android:layout_weight="1"
-        android:background="@color/blueGrey_400"
+        android:background="#003749"
         android:gravity="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         tools:text="8th place" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -115,9 +123,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/highScore_margin"
         android:layout_weight="1"
-        android:background="@color/blueGrey_400"
+        android:background="#003749"
         android:gravity="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         tools:text="9th place" />
 
     <com.google.android.material.textview.MaterialTextView
@@ -126,9 +135,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/highScore_margin"
         android:layout_weight="1"
-        android:background="@color/blueGrey_400"
+        android:background="#003749"
         android:gravity="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         tools:text="10th place" />
 
 
