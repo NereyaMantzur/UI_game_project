@@ -1,47 +1,63 @@
-https://github.com/user-attachments/assets/77a1a5aa-7c9f-4b88-8088-be91d6ca5478
-# Spaceship Dodger 🚀☄️
+# 🚀 AstroHit Game
 
-An Android arcade game developed in Kotlin where players navigate a spaceship through a grid to avoid incoming asteroids.
+**AstroHit** is an interactive Android arcade game where players navigate a spaceship through an asteroid field, collecting coins and avoiding collisions. The app features multiple game modes, sensor-based controls, and a location-based leaderboard.
 
-> **Note:** This project was developed as part of a **mobile development course** at **Afeka College**.
+---
 
-## 📱 App Overview
+## 📱 Features
 
-The application is a grid-based survival game. The player controls a spaceship restricted to three specific lanes (rows). Asteroids spawn and move across the screen in a tick-based loop. The goal is to survive as long as possible without losing all three lives.
+### 🎮 Gameplay
+* **Grid-Based Movement:** Navigate a spaceship across a 5x5 grid.
+* **Obstacles & Rewards:** Avoid falling asteroids and collect coins for bonus points.
+* **Lives System:** The player starts with 3 lives (hearts). The game ends when all hearts are lost.
+* **Dynamic Difficulty:** The game speeds up or slows down based on user input or game events.
 
-### Key Features
-* **Lane-Based Movement:** Navigate a spaceship across 3 distinct lanes using Floating Action Buttons (FABs).
-* **Dynamic Obstacles:** Asteroids spawn randomly and move across a grid system.
-* **Health System:** The player starts with **3 hearts**. Collisions reduce health and trigger visual UI updates.
-* **Haptic & Visual Feedback:**
-    * Vibration feedback upon collision (supports modern and legacy Android SDKs).
-    * Toast messages for "OUCH" (hit) and "GAME OVER".
-* **Animated Background:** Uses **Glide** to load a GIF background for an immersive space atmosphere.
+### 🕹️ Game Modes
+1. **Slow Mode:** Relaxed gameplay with slower obstacle speed.
+2. **Fast Mode:** High-speed challenge for advanced players.
+3. **Sensor Mode:** Control the spaceship by tilting your device (using the accelerometer).
 
-## 🛠️ Tech Stack & Architecture
+### 🏆 Leaderboard & Map
+* **High Scores:** Top 10 scores are saved locally using `SharedPreferences`.
+* **Location Integration:** Captures the player's GPS location when a high score is achieved.
+* **Google Maps View:** View the location of each high score on an embedded Google Map.
+* **Interactive List:** Clicking a score in the leaderboard zooms into that specific location on the map.
+
+---
+
+## 🛠️ Tech Stack & Libraries
 
 * **Language:** Kotlin
-* **Platform:** Android (View System/XML)
-* **Architecture:** MVC-inspired (Model-View-Controller)
-    * **Model:** `GameManager` handles logic (collisions, game state).
-    * **View/Controller:** `MainActivity` handles UI rendering and user input.
-    * **Utils:** `SignalManager` (Thread-safe Singleton) handles system services like Vibration and Toasts.
-* **Libraries:**
-    * [Glide](https://github.com/bumptech/glide) - For efficient image and GIF loading.
+* **Architecture:** MVC (Model-View-Controller)
+* **UI Components:** XML Layouts, Material Design Components, Fragments.
+* **Sensors:** `SensorManager` (Accelerometer) for tilt detection.
+* **Location:** Google Play Services Location (`FusedLocationProviderClient`).
+* **Maps:** Google Maps SDK for Android.
+* **Data Persistence:** `SharedPreferences` & `Gson` for saving complex objects.
+* **Image Loading:** Glide (via a custom `ImageLoader` utility).
+* **Audio:** `MediaPlayer` for sound effects (crash & coin collection).
 
-## 🎮 How to Play
+---
 
-1.  Launch the application.
-2.  Use the **Right Arrow** button to move the ship down a lane, and the **Left Arrow** button to move up a lane.
-3.  Avoid the incoming asteroids.
-4.  If you hit an asteroid, your phone will vibrate and you will lose a heart.
-5.  If you get hit 3 times, the game ends and restarts.
+## 📸 Screenshots
 
-## 📂 Project Structure
+| Menu Screen | Gameplay | Leaderboard |
+|:---:|:---:|:---:|
+| ![Menu](docs/menu_screenshot.png) | ![Game](docs/game_screenshot.png) | ![Scores](docs/scores_screenshot.png) |
 
-* `model/`: Contains `GameManager.kt` which manages the game state, hits, and collision logic.
-* `utils/`:
-    * `AsteroidState.kt`: Data class tracking asteroid coordinates and movement logic.
-    * `SignalManager.kt`: A Singleton for handling Vibrations and Toasts.
-    * `Constants.kt`: Holds configuration values (e.g., Game Loop Timer delay).
-* `MainActivity.kt`: The main entry point containing the `Handler`/`Runnable` game loop and UI view bindings.
+*(Note: Replace the paths above with the actual paths to your screenshots)*
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+* Android Studio Ladybug (or newer)
+* Android SDK API Level 24+ (Min SDK)
+* A Google Maps API Key
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/YourUsername/SpaceDodgeGame.git](https://github.com/YourUsername/SpaceDodgeGame.git)
