@@ -53,7 +53,7 @@ class MenuActivity : AppCompatActivity() {
         menu_BTN_fast.setOnClickListener {
             selectedMode = Constants.GameMode.FAST
             moveToGame() }
-        menu_BTN_sensor.setOnClickListener { selectedMode = Constants.GameMode.FAST
+        menu_BTN_sensor.setOnClickListener { selectedMode = Constants.GameMode.SENSOR
             moveToGame() }
 
         menu_BTN_leaderboard.setOnClickListener {

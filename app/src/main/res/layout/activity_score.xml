@@ -7,6 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".ScoreActivity">
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/score_BG_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"/>
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,7 +23,6 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#003749"
             android:padding="@dimen/default_padding" />
 
         <FrameLayout
@@ -25,8 +30,8 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#003749"
             android:padding="@dimen/default_padding" />
     </androidx.appcompat.widget.LinearLayoutCompat>
+
 
 </FrameLayout>
