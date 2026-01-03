@@ -1,6 +1,7 @@
 package com.dev.nereya.ui_game_project.model
 
 import com.dev.nereya.ui_game_project.utils.AsteroidState
+import com.dev.nereya.ui_game_project.utils.Coin
 
 class GameManager {
 
@@ -17,6 +18,11 @@ class GameManager {
         AsteroidState((0..4).random(), -2),
     )
 
+    val coins: Array<Coin> = arrayOf(
+        Coin((0..4).random(), -5),
+        Coin((0..4).random(), -7)
+    )
+
     fun moveShip(direction: Int) {
         if (direction == 1 && currentShipIndex < 4) {
             currentShipIndex++
@@ -31,6 +37,12 @@ class GameManager {
         }
     }
 
+    fun moveCoins() {
+        for (coin in coins) {
+            coin.moveForward()
+        }
+    }
+
     fun checkForCollisions(): Boolean {
         var crashFound = false
         for (asteroid in asteroids) {
@@ -39,11 +51,28 @@ class GameManager {
                 hits++
                 crashFound = true
 
+                asteroid.rowIndex = -1
+                asteroid.colIndex = (0..4).random()
+
                 if (hearts <= 0) {
                     isGameEnded = true
                 }
             }
         }
         return crashFound
+    }
+
+    fun checkCoinCollection(): Boolean {
+        var coinCollected = false
+        for (coin in coins) {
+            if (coin.rowIndex == 4 && coin.colIndex == currentShipIndex) {
+                score += 100
+                coinCollected = true
+
+                coin.rowIndex = -10
+                coin.colIndex = (0..4).random()
+            }
+        }
+        return coinCollected
     }
 }

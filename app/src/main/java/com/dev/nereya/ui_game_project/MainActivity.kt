@@ -40,13 +40,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var main_score: MaterialTextView
 
     private lateinit var main_spaceships: Array<AppCompatImageView>
-    private lateinit var main_asteroidsMatrix: Array<Array<AppCompatImageView>>
+    private lateinit var main_gameGrid: Array<Array<AppCompatImageView>>
     private lateinit var gameMode: String
 
     private lateinit var main_LBL_score: MaterialTextView
     private lateinit var main_BTN_save: MaterialButton
     private lateinit var main_container: LinearLayoutCompat
     private lateinit var main_name_fill: TextInputLayout
+    private lateinit var main_progressBar: android.widget.ProgressBar
 
     private lateinit var xAxisDetector: TiltDetector
     private lateinit var yAxisDetector: TiltDetector
@@ -63,15 +64,22 @@ class MainActivity : AppCompatActivity() {
         override fun run() {
             gameManager.score += 10
             updateScoreUI()
-            hideAsteroidsUI()
+
             gameManager.moveAsteroids()
-            showAsteroidsUI()
+            gameManager.moveCoins()
+
+            refreshGridUI()
 
             if (gameManager.checkForCollisions()) {
                 ssp.playSound(R.raw.boom)
                 SignalManager.getInstance().vibrate()
                 SignalManager.getInstance().toast("OUCH")
                 updateHeartsUI()
+            }
+
+            if (gameManager.checkCoinCollection()) {
+                ssp.playSound(R.raw.ding)
+                SignalManager.getInstance().toast("+100!")
             }
 
             if (gameManager.isGameEnded) {
@@ -153,6 +161,7 @@ class MainActivity : AppCompatActivity() {
         main_FAB_left = findViewById(R.id.main_FAB_left)
         main_FAB_right = findViewById(R.id.main_FAB_right)
         main_score = findViewById(R.id.main_score)
+        main_progressBar = findViewById(R.id.main_progressBar)
 
         main_hearts = arrayOf(
             findViewById(R.id.main_IMG_heart0),
@@ -160,9 +169,9 @@ class MainActivity : AppCompatActivity() {
             findViewById(R.id.main_IMG_heart2)
         )
 
-        main_asteroidsMatrix = Array(5) { col ->
+        main_gameGrid = Array(5) { col ->
             Array(5) { row ->
-                val idStr = "main_asteroid${col}_${row}"
+                val idStr = "main_asteroid${col}_${row}" // XML IDs can stay the same
                 val resId = resources.getIdentifier(idStr, "id", packageName)
                 findViewById(resId) ?: error("Missing ID $idStr")
             }
@@ -189,6 +198,19 @@ class MainActivity : AppCompatActivity() {
             val name = main_name_fill.editText?.text.toString()
 
             if (name.isNotEmpty()) {
+                saveScoreWithLocation()
+            } else {
+                main_name_fill.error = "Please enter your name"
+            }
+        }
+        main_BTN_save.setOnClickListener {
+            val name = main_name_fill.editText?.text.toString()
+
+            if (name.isNotEmpty()) {
+                main_BTN_save.isEnabled = false
+
+                main_progressBar.visibility = View.VISIBLE
+
                 saveScoreWithLocation()
             } else {
                 main_name_fill.error = "Please enter your name"
@@ -239,18 +261,26 @@ class MainActivity : AppCompatActivity() {
         main_spaceships[gameManager.currentShipIndex].visibility = View.VISIBLE
     }
 
-    private fun hideAsteroidsUI() {
-        for (state in gameManager.asteroids) {
-            if (state.rowIndex in 0..4 && state.colIndex in 0..4) {
-                main_asteroidsMatrix[state.colIndex][state.rowIndex].visibility = View.INVISIBLE
+    private fun refreshGridUI() {
+        for (col in 0..4) {
+            for (row in 0..4) {
+                main_gameGrid[col][row].visibility = View.INVISIBLE
             }
         }
-    }
 
-    private fun showAsteroidsUI() {
-        for (state in gameManager.asteroids) {
-            if (state.rowIndex in 0..4 && state.colIndex in 0..4) {
-                main_asteroidsMatrix[state.colIndex][state.rowIndex].visibility = View.VISIBLE
+        for (coin in gameManager.coins) {
+            if (coin.rowIndex in 0..4 && coin.colIndex in 0..4) {
+                val cell = main_gameGrid[coin.colIndex][coin.rowIndex]
+                cell.setImageResource(R.drawable.coin)
+                cell.visibility = View.VISIBLE
+            }
+        }
+
+        for (asteroid in gameManager.asteroids) {
+            if (asteroid.rowIndex in 0..4 && asteroid.colIndex in 0..4) {
+                val cell = main_gameGrid[asteroid.colIndex][asteroid.rowIndex]
+                cell.setImageResource(R.drawable.asteroid)
+                cell.visibility = View.VISIBLE
             }
         }
     }
