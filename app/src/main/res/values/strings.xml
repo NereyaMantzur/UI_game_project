@@ -3,7 +3,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="leaderboard_title">LEADERBOARD</string>
     <string name="leaderboard">Leaderboard</string>
-    <string name="sensor_mode">SENSOR MODE</string>
-    <string name="button_mode_fast">Button MODE - FAST</string>
-    <string name="button_mode_slow">Button MODE - SLOW</string>
+    <string name="sensor_mode">sensor</string>
+    <string name="button_mode_fast">Button - FAST</string>
+    <string name="button_mode_slow">Button - SLOW</string>
 </resources>
