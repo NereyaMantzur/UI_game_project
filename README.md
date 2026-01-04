@@ -41,11 +41,18 @@
 
 ## 📸 Screenshots
 
-<p align="center">
-  <img src="docs/menu_screenshot.jpg" width="32%" />
-  <img src="docs/game_screenshot.jpg" width="32%" />
-  <img src="docs/scores_screenshot.jpg" width="32%" />
-</p>
+<table>
+  <tr>
+    <td align="center"><b>Menu</b></td>
+    <td align="center"><b>Game</b></td>
+    <td align="center"><b>Scores</b></td>
+  </tr>
+  <tr>
+    <td><img src="docs/menu_screenshot.jpg" width="100%" /></td>
+    <td><img src="docs/game_screenshot.jpg" width="100%" /></td>
+    <td><img src="docs/scores_screenshot.jpg" width="100%" /></td>
+  </tr>
+</table>
 
 ---
 
