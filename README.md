@@ -60,4 +60,4 @@
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/YourUsername/SpaceDodgeGame.git](https://github.com/YourUsername/SpaceDodgeGame.git)
+   git clone [https://github.com/NereyaMantzur/AstroHit_Game.git](https://github.com/NereyaMantzur/AstroHit_Game.git)
